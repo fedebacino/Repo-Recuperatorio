@@ -11,6 +11,32 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+Route::get('/', 'MoviesController@index');
+
+Route::get('/movies/listMovies/', 'MoviesController@list');
+
+Route::get('/movies/detailMovie/{id}', 'MoviesController@show');
+
+Route::get('/movies/editMovie/{id}', 'MoviesController@edit');
+
+Route::patch('/movies/updateMovie/{id}', 'MoviesController@update');
+
+
+
+Route::get('/actors/listActors/', 'ActorsController@list');
+
+Route::get('/actors/detailActor/{id}', 'ActorsController@show');
+
+Route::get('/actors/addActor/', 'ActorsController@create');
+
+Route::post('/actors/saveActor', 'ActorsController@store');
+
+
+
+Route::get('/genres/listGenres/', 'GenresController@list');
+
+Route::get('/genres/listbyGenre/{id}', 'GenresController@show');
