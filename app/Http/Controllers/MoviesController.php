@@ -19,7 +19,7 @@ class MoviesController extends Controller
 
     public function list()
     {
-        $peliculas = Movie::paginate(5);
+        $peliculas = Movie::paginate(10);
         return view('movies.listMovies')->with('peliculas', $peliculas);
     }
 
@@ -33,30 +33,30 @@ class MoviesController extends Controller
 
     public function edit($id)
     {
-        $peliculaEditar = Movie::find($id);
+        $peliculaEdit = Movie::find($id);
         $generos = Genre::all();
         $actores = Actor::all();
-        return view('movies.editMovie', compact('peliculaEditar', 'generos', 'actores'));
+        return view('movies.editMovie', compact('peliculaEdit', 'generos', 'actores'));
     }
 
 
     public function update(Request $request, $id)
     {
-        $peliculaEditar = Movie::find($id);
-        $peliculaEditar->title = $request->input('title');
-        $peliculaEditar->rating = $request->input('rating');
-        $peliculaEditar->awards = $request->input('awards');
-        $peliculaEditar->genre_id = $request->input('genre_id');
-        $peliculaEditar->length = $request->input('length');
+        $peliculaEdit = Movie::find($id);
+        $peliculaEdit->title = $request->input('title');
+        $peliculaEdit->rating = $request->input('rating');
+        $peliculaEdit->awards = $request->input('awards');
+        $peliculaEdit->genre_id = $request->input('genre_id');
+        $peliculaEdit->length = $request->input('length');
 
 
         if ($request->hasFile('poster')) {
             $ruta =  $request->file('poster')->store('public');
             $nombreArchivo = basename($ruta);
-            $peliculaEditar->poster = $nombreArchivo;
+            $peliculaEdit->poster = $nombreArchivo;
         }
 
-        $peliculaEditar->update();
+        $peliculaEdit->update();
         return redirect('/movies/listMovies');
     }
 }

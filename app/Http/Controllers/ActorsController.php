@@ -18,7 +18,7 @@ class ActorsController extends Controller
     public function create()
     {
         $actores = Actor::all();
-        return view('actors.agregarActor')->with('actores', $actores);
+        return view('actors.addActor')->with('actores', $actores);
     }
 
 
