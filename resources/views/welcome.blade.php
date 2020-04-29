@@ -6,13 +6,12 @@
 @endsection
 
 <section class="col-12 col-sm-12 col-md-9 pt-5">
-    <div class="row">
+    <div class="row justify-content-center">
         @foreach ($peliculas as $pelicula)
-        <div class="card justify-content-center" style="width: 20rem;">
-            <a href="/movies/detailMovie/{{ $pelicula->id }}" class="btn3">
+        <div class="card" style="width: 18rem;" id="tarjeta">
+            <a href="/movies/detailMovie/{{ $pelicula->id }}" class="tarjMain">
                 <div class="card-body">
                     <h5 class="card-title">
-                        <img src="/storage/{{$pelicula->poster}}" alt="">
                         <p>{{$pelicula->title}}</p>
                     </h5>
                 </div>
@@ -20,7 +19,7 @@
         </div>
         @endforeach
     </div>
-    <div>
+    <div class="pagination">
         {{$peliculas->links()}}
     </div>
 </section>

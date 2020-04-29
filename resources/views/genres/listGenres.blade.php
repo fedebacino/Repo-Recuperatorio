@@ -4,7 +4,7 @@
 
 
 <div class="spacer px-5 mb-5">
-    <table class="table">
+    <table class="table" id="tarjGenre">
         <thead>
             <tr>
                 <th>ID</th>

@@ -4,7 +4,7 @@
 
 
 <div class="spacer px-5 mb-5">
-    <table class="table">
+    <table class="table" id="tarjGenre">
         <thead>
             <tr>
                 <th>ID</th>
@@ -29,7 +29,7 @@
     </table>
     <div class="text-center">
         {{$actores->links()}}
-        <a href="/actors/addActor/" class="btn btn-primary">Add Actor</a>
+        <a href="/actors/addActor/" class="btn">Add Actor</a>
     </div>
 </div>
 

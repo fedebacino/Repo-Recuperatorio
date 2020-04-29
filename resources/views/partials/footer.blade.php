@@ -8,7 +8,7 @@
     </div>
 </footer>
 <!-- Copyright Section-->
-<section class="copyright py-4 text-center text-white">
+<section class="footer py-4 text-center text-white">
     <div class="container"><small>Recuperatorio - Federico Bacino</small></div>
 </section>
 
